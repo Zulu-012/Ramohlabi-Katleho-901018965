@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Farming Businesses</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            background-image:url('https://static.vecteezy.com/system/resources/previews/037/236/276/non_2x/ai-generated-farm-advertisment-background-with-copy-space-free-photo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+
+        }
+        
+        
+        
+        header {
+            background-color:green;
+            color:white;
+            padding: 16px 32px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+        }
+        
+        .logo {
+            font-size:32px;
+            margin-bottom:16px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            
+        }
+        
+        nav ul li a:hover {
+            color: #d4f1c5;
+        }
+        /* Main Content Styles */
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        h1 {
+            color: #2e8b57;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 2.2rem;
+            
+        }
+        /* Filter Section */
+        
+        
+        
+        .business-filter form {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .business-filter label {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .business-filter select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+        
+        .business-filter button {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .business-filter button:hover {
+            background-color: #3aa76d;
+        }
+        /* Business List Styles */
+        
+        .business-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .business-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .business-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .business-card h2 {
+            color: #2e8b57;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .category {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: #2e8b57;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .products h3 {
+            font-size: 1.1rem;
+            margin: 1rem 0 0.5rem;
+            color: #555;
+        }
+        
+        .products ul {
+            list-style-position: inside;
+            margin-bottom: 1.5rem;
+        }
+        
+        .products li {
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background-color: #2e8b57;
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-btn:hover {
+            background-color: #3aa76d;
+        }
+        /* Footer Styles */
+        
+        footer {
+            background-color:green;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 0 0.7rem;
+            }
+            .business-filter form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Lesotho Farmers Hub</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="business.html">Businesses</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="tips.html">Business Tips</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Local Farming Businesses</h1>
+
+        <div class="business-list">
+            <article class="business-card">
+                <h2>Maseru Organic Farm</h2>
+                <p class="category">Crop Farming</p>
+                <div class="products">
+                    <h3>Products:</h3>
+                    <ul>
+                        <li>Tomatoes - M15/kg</li>
+                        <li>Potatoes - M10/kg</li>
+                        <li>Spinach - M8/bunch</li>
+                        <li>Carrots - M12/kg</li>
+                    </ul>
+                </div>
+                <a href="#" class="contact-btn">Contact Farmer</a>
+            </article>
+
+            <article class="business-card">
+                <h2>Leribe Cattle Ranch</h2>
+                <p class="category">Livestock</p>
+                <div class="products">
+                    <h3>Products:</h3>
+                    <ul>
+                        <li>Beef cattle</li>
+                        <li>Manure - M50/bag</li>
+                        <li>Live calves</li>
+                    </ul>
+                </div>
+                <a href="#" class="contact-btn">Contact Farmer</a>
+            </article>
+
+            <article class="business-card">
+                <h2>Mokhotlong Poultry</h2>
+                <p class="category">Poultry</p>
+                <div class="products">
+                    <h3>Products:</h3>
+                    <ul>
+                        <li>Eggs - M30/dozen</li>
+                        <li>Broiler chickens - M45 each</li>
+                        <li>Day-old chicks</li>
+                    </ul>
+                </div>
+                <a href="#" class="contact-btn">Contact Farmer</a>
+            </article>
+
+            <article class="business-card">
+                <h2>Thaba-Tseka Dairy</h2>
+                <p class="category">Dairy</p>
+                <div class="products">
+                    <h3>Products:</h3>
+                    <ul>
+                        <li>Fresh milk - M12/liter</li>
+                        <li>Yogurt - M10/cup</li>
+                        <li>Cheese - M25/100g</li>
+                    </ul>
+                </div>
+                <a href="#" class="contact-btn">Contact Farmer</a>
+            </article>
+
+            <article class="business-card">
+                <h2>Quthing Honey Farm</h2>
+                <p class="category">Agro-processing</p>
+                <div class="products">
+                    <h3>Products:</h3>
+                    <ul>
+                        <li>Pure honey - M80/500g</li>
+                        <li>Beeswax candles</li>
+                        <li>Propolis tincture</li>
+                    </ul>
+                </div>
+                <a href="#" class="contact-btn">Contact Farmer</a>
+            </article>
+
+            <article class="business-card">
+                <h2>Butha-Buthe Wool</h2>
+                <p class="category">Livestock</p>
+                <div class="products">
+                    <h3>Products:</h3>
+                    <ul>
+                        <li>Sheep wool - M120/kg</li>
+                        <li>Mohair - M150/kg</li>
+                        <li>Live sheep</li>
+                    </ul>
+                </div>
+                <a href="#" class="contact-btn">Contact Farmer</a>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact</a>
+        </div>
+        <p>&copy; 2023 Lesotho Farmers Network. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
